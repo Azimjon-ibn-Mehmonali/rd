@@ -1,0 +1,163 @@
+[General]
+answer_file_save_path=./sinovlar/chiq/${basename}/${basename}_${1-index}.out
+ask_for_loading_external_changes=true
+auto_complete_parentheses=true
+auto_indent=true
+auto_load_external_changes_if_no_unsaved_modification=true
+auto_remove_parentheses=true
+auto_save=false
+auto_save_interval=1000
+auto_save_interval_type=After the last modification
+beta=true
+check_on_testcases_with_empty_output=true
+check_update=false
+custom_application_font=@Variant(\0\0\0@\0\0\0\x14\0S\0\x61\0n\0s\0 \0S\0\x65\0r\0i\0\x66@\"\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+default_file_paths_for_problem_urls=@Invalid()
+default_language=C++
+display_eoln_in_diff=false
+editor_font="@Variant(\0\0\0@\0\0\0\x12\0M\0o\0n\0o\0s\0p\0\x61\0\x63\0\x65@,\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
+editor_theme=Monokai
+extra_bottom_margin=false
+file_problem_binding=/home/azimjon/rd/IOI training/contest #3/A.cpp, https://codeforces.com/group/5mF1N2M956/contest/288691/problem/A, /home/azimjon/rd/IOI training/contest #3/B.cpp, https://codeforces.com/group/5mF1N2M956/contest/288691/problem/B, /home/azimjon/rd/IOI training/contest #3/C.cpp, https://codeforces.com/group/5mF1N2M956/contest/288691/problem/C, /home/azimjon/rd/IOI training/contest #3/D.cpp, https://codeforces.com/group/5mF1N2M956/contest/288691/problem/D, /home/azimjon/rd/IOI_training/boi2016d2/A.cpp, https://cses.fi/88/task/A, /home/azimjon/rd/IOI_training/boi2016d2/C.cpp, https://cses.fi/88/task/C, /home/azimjon/rd/IOI_training/contest_#3/F.cpp, https://codeforces.com/group/5mF1N2M956/contest/288691/problem/F, /home/azimjon/rd/IOI_training/contest_#4/A.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/A, /home/azimjon/rd/IOI_training/contest_#4/B.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/B, /home/azimjon/rd/IOI_training/contest_#4/C.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/C, /home/azimjon/rd/IOI_training/contest_#4/D.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/D, /home/azimjon/rd/IOI_training/contest_#4/E.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/E, /home/azimjon/rd/IOI_training/contest_#4/F.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/F, /home/azimjon/rd/IOI_training/contest_#4/G.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/G, /home/azimjon/rd/IOI_training/contest_#4/H.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/H, /home/azimjon/rd/IOI_training/contest_#4/I.cpp, https://codeforces.com/group/5mF1N2M956/contest/289033/problem/I, /home/azimjon/rd/IOI_training/contest_#5/A.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/A, /home/azimjon/rd/IOI_training/contest_#5/B.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/B, /home/azimjon/rd/IOI_training/contest_#5/C.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/C, /home/azimjon/rd/IOI_training/contest_#5/D.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/D, /home/azimjon/rd/IOI_training/contest_#5/E.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/E, /home/azimjon/rd/IOI_training/contest_#5/F.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/F, /home/azimjon/rd/IOI_training/contest_#5/G.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/G, /home/azimjon/rd/IOI_training/contest_#5/H.cpp, https://codeforces.com/group/5mF1N2M956/contest/289850/problem/H, /home/azimjon/rd/IOI_training/must_solve_1/A.cpp, https://codeforces.com/gym/294367/problem/A, /home/azimjon/rd/IOI_training/must_solve_1/B.cpp, https://codeforces.com/gym/294367/problem/B, /home/azimjon/rd/IOI_training/must_solve_1/C.cpp, https://codeforces.com/gym/294367/problem/C, /home/azimjon/rd/IOI_training/must_solve_1/D.cpp, https://codeforces.com/gym/294367/problem/D, /home/azimjon/rd/IOI_training/must_solve_1/E.cpp, https://codeforces.com/gym/294367/problem/E, /home/azimjon/rd/IOI_training/must_solve_1/F.cpp, https://codeforces.com/gym/294367/problem/F, /home/azimjon/rd/IOI_training/must_solve_1/G.cpp, https://codeforces.com/gym/294367/problem/G, /home/azimjon/rd/IOI_training/must_solve_1/H.cpp, https://codeforces.com/gym/294367/problem/H, /home/azimjon/rd/IOI_training/must_solve_1/I.cpp, https://codeforces.com/gym/294367/problem/I, /home/azimjon/rd/IOI_training/must_solve_1/J.cpp, https://codeforces.com/gym/294367/problem/J, /home/azimjon/rd/IOI_training/must_solve_1/K.cpp, https://codeforces.com/gym/294367/problem/K, /home/azimjon/rd/IOI_training/must_solve_1/L.cpp, https://codeforces.com/gym/294367/problem/L, /home/azimjon/rd/IOI_training/must_solve_1/M.cpp, https://codeforces.com/gym/294367/problem/M, /home/azimjon/rd/IOI_training/must_solve_1/N.cpp, https://codeforces.com/gym/294367/problem/N, /home/azimjon/rd/IOI_training/must_solve_1/O.cpp, https://codeforces.com/gym/294367/problem/O, /home/azimjon/rd/IOI_training/must_solve_1/P.cpp, https://codeforces.com/gym/294367/problem/P, /home/azimjon/rd/IOI_training/must_solve_1/Q.cpp, https://codeforces.com/gym/294367/problem/Q, /home/azimjon/rd/IOI_training/must_solve_1/R.cpp, https://codeforces.com/gym/294367/problem/R, /home/azimjon/rd/IOI_training/practice_#2/A.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/A, /home/azimjon/rd/IOI_training/practice_#2/B.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/B, /home/azimjon/rd/IOI_training/practice_#2/C.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/C, /home/azimjon/rd/IOI_training/practice_#2/D.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/D, /home/azimjon/rd/IOI_training/practice_#2/E.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/E, /home/azimjon/rd/IOI_training/practice_#2/F.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/F, /home/azimjon/rd/IOI_training/practice_#2/G.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/G, /home/azimjon/rd/IOI_training/practice_#2/H.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/H, /home/azimjon/rd/IOI_training/practice_#2/I.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/I, /home/azimjon/rd/IOI_training/practice_#2/J.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/294003/problem/J, /home/azimjon/rd/IOI_training/practise_#1/A.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/A, /home/azimjon/rd/IOI_training/practise_#1/B.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/B, /home/azimjon/rd/IOI_training/practise_#1/C.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/C, /home/azimjon/rd/IOI_training/practise_#1/D.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/D, /home/azimjon/rd/IOI_training/practise_#1/E.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/E, /home/azimjon/rd/IOI_training/practise_#1/F.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/F, /home/azimjon/rd/IOI_training/practise_#1/G.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/G, /home/azimjon/rd/IOI_training/practise_#1/H.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/H, /home/azimjon/rd/IOI_training/practise_#1/I.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/I, /home/azimjon/rd/IOI_training/practise_#1/J.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/J, /home/azimjon/rd/IOI_training/practise_#1/K.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/K, /home/azimjon/rd/IOI_training/practise_#1/L.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/L, /home/azimjon/rd/IOI_training/practise_#1/M.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/M, /home/azimjon/rd/IOI_training/practise_#1/N.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/N, /home/azimjon/rd/IOI_training/practise_#1/S.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/S, /home/azimjon/rd/IOI_training/practise_#1/T.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/T, /home/azimjon/rd/IOI_training/practise_#1/U.cpp, https://codeforces.com/group/mcSSKLGGT5/contest/293496/problem/U, /home/azimjon/rd/acmp/1300.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=139&id_problem=870", /home/azimjon/rd/acmp/1301.cpp, "https://acmp.ru/asp/do/index.asp?main=topic&id_course=5&id_section=29&id_topic=141", /home/azimjon/rd/acmp/1303.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=141&id_problem=887", /home/azimjon/rd/acmp/1328.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=149&id_problem=930&ins=1", /home/azimjon/rd/acmp/1333.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=150&id_problem=935", /home/azimjon/rd/acmp/196.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=138&id_problem=864", /home/azimjon/rd/acmp/356.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=139&id_problem=867", /home/azimjon/rd/acmp/362.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=139&id_problem=868", /home/azimjon/rd/acmp/363.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=139&id_problem=869", /home/azimjon/rd/acmp/365.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=141&id_problem=883", /home/azimjon/rd/acmp/369, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=141&id_problem=884", /home/azimjon/rd/acmp/376.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=142&id_problem=893", /home/azimjon/rd/acmp/377.cpp, "https://acmp.ru/asp/do/index.asp?main=topic&id_course=5&id_section=29&id_topic=144", /home/azimjon/rd/acmp/379.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=144&id_problem=900&ins=1", /home/azimjon/rd/acmp/424.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=145&id_problem=906&ins=1#solution", /home/azimjon/rd/acmp/432.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=5&id_section=29&id_topic=146&id_problem=915&ins=1#solution", /home/azimjon/rd/atcoder/abc174/abc174_b.cpp, https://atcoder.jp/contests/abc174/tasks/abc174_b, /home/azimjon/rd/atcoder/abc174/abc174_c.cpp, https://atcoder.jp/contests/abc174/tasks/abc174_c, /home/azimjon/rd/atcoder/abc174/abc174_d.cpp, https://atcoder.jp/contests/abc174/tasks/abc174_d, /home/azimjon/rd/atcoder/abc174/abc174_f.cpp, https://atcoder.jp/contests/abc174/tasks/abc174_f, /home/azimjon/rd/atcoder/abc175/abc175_b.cpp, https://atcoder.jp/contests/abc175/tasks/abc175_b, /home/azimjon/rd/atcoder/abc175/abc175_c.cpp, https://atcoder.jp/contests/abc175/tasks/abc175_c, /home/azimjon/rd/atcoder/abc175/abc175_d.cpp, https://atcoder.jp/contests/abc175/tasks/abc175_d, /home/azimjon/rd/atcoder/abc175/abc175_e.cpp, https://atcoder.jp/contests/abc175/tasks/abc175_e, /home/azimjon/rd/atcoder/abc176/abc176_c.cpp, https://atcoder.jp/contests/abc176/tasks/abc176_c, /home/azimjon/rd/atcoder/abc176/abc176_d.cpp, https://atcoder.jp/contests/abc176/tasks/abc176_d, /home/azimjon/rd/atcoder/abc176/abc176_e.cpp, https://atcoder.jp/contests/abc176/tasks/abc176_e, /home/azimjon/rd/atcoder/abc177/abc177_a.cpp, https://atcoder.jp/contests/abc177/tasks/abc177_a, /home/azimjon/rd/atcoder/abc177/abc177_b.cpp, https://atcoder.jp/contests/abc177/tasks/abc177_b, /home/azimjon/rd/atcoder/abc177/abc177_c.cpp, https://atcoder.jp/contests/abc177/tasks/abc177_c, /home/azimjon/rd/atcoder/abc177/abc177_d.cpp, https://atcoder.jp/contests/abc177/tasks/abc177_d, /home/azimjon/rd/atcoder/abc177/abc177_e.cpp, https://atcoder.jp/contests/abc177/tasks/abc177_e, /home/azimjon/rd/codeforces/contests/659/A.cpp, https://codeforces.com/contest/1384/problem/A, /home/azimjon/rd/codeforces/contests/660/A.cpp, https://codeforces.com/contest/1388/problem/A, /home/azimjon/rd/codeforces/contests/660/B.cpp, https://codeforces.com/contest/1388/problem/B, /home/azimjon/rd/codeforces/contests/660/C.cpp, https://codeforces.com/contest/1388/problem/C, /home/azimjon/rd/codeforces/contests/661/A.cpp, https://codeforces.com/contest/1399/problem/A, /home/azimjon/rd/codeforces/contests/661/B.cpp, https://codeforces.com/contest/1399/problem/B, /home/azimjon/rd/codeforces/contests/661/C.cpp, https://codeforces.com/contest/1399/problem/C, /home/azimjon/rd/codeforces/contests/661/D.cpp, https://codeforces.com/contest/1399/problem/D, /home/azimjon/rd/codeforces/contests/662/A.cpp, https://codeforces.com/contest/1393/problem/A, /home/azimjon/rd/codeforces/contests/662/B.cpp, https://codeforces.com/contest/1393/problem/B, /home/azimjon/rd/codeforces/contests/662/C.cpp, https://codeforces.com/contest/1393/problem/C, /home/azimjon/rd/codeforces/contests/663/A.cpp, https://codeforces.com/contest/1391/problem/A, /home/azimjon/rd/codeforces/contests/663/B.cpp, https://codeforces.com/contest/1391/problem/B, /home/azimjon/rd/codeforces/contests/663/C.cpp, https://codeforces.com/contest/1391/problem/C, /home/azimjon/rd/codeforces/contests/664/A.cpp, https://codeforces.com/contest/1395/problem/A, /home/azimjon/rd/codeforces/contests/664/B.cpp, https://codeforces.com/contest/1395/problem/B, /home/azimjon/rd/codeforces/contests/664/C.cpp, https://codeforces.com/contest/1395/problem/C, /home/azimjon/rd/codeforces/contests/664/D.cpp, https://codeforces.com/contest/1395/problem/D, /home/azimjon/rd/codeforces/contests/665/A.cpp, https://codeforces.com/contest/1401/problem/A, /home/azimjon/rd/codeforces/contests/665/B.cpp, https://codeforces.com/contest/1401/problem/B, /home/azimjon/rd/codeforces/contests/665/C.cpp, https://codeforces.com/contest/1401/problem/C, /home/azimjon/rd/codeforces/contests/665/D.cpp, https://codeforces.com/contest/1401/problem/D, /home/azimjon/rd/codeforces/contests/666/A.cpp, https://codeforces.com/contest/1397/problem/A, /home/azimjon/rd/codeforces/contests/666/B.cpp, https://codeforces.com/contest/1397/problem/B, /home/azimjon/rd/codeforces/contests/666/C.cpp, https://codeforces.com/contest/1397/problem/C, /home/azimjon/rd/codeforces/contests/668/A.cpp, https://codeforces.com/contest/1405/problem/A, /home/azimjon/rd/codeforces/contests/668/B.cpp, https://codeforces.com/contest/1405/problem/B, /home/azimjon/rd/codeforces/contests/668/C.cpp, https://codeforces.com/contest/1405/problem/C, /home/azimjon/rd/codeforces/contests/668/D.cpp, https://codeforces.com/contest/1405/problem/D, /home/azimjon/rd/codeforces/contests/669/A.cpp, https://codeforces.com/contest/1407/problem/A, /home/azimjon/rd/codeforces/contests/669/B.cpp, https://codeforces.com/contest/1407/problem/B, /home/azimjon/rd/codeforces/contests/669/C.cpp, https://codeforces.com/contest/1407/problem/C, /home/azimjon/rd/codeforces/contests/BOI_2020_D2/A.cpp, https://codeforces.com/contest/1387/problem/A, /home/azimjon/rd/codeforces/contests/BOI_2020_D2/B1.cpp, https://codeforces.com/contest/1387/problem/B1, /home/azimjon/rd/codeforces/contests/BOI_2020_D2/B2.cpp, https://codeforces.com/contest/1387/problem/B2, /home/azimjon/rd/codeforces/contests/BOI_2020_D2/C.cpp, https://codeforces.com/contest/1387/problem/C, /home/azimjon/rd/codeforces/contests/CEOI_2020_D1/A.cpp, https://codeforces.com/contest/1402/problem/A, /home/azimjon/rd/codeforces/contests/CEOI_2020_D1/B.cpp, https://codeforces.com/contest/1402/problem/B, /home/azimjon/rd/codeforces/contests/CEOI_2020_D1/C.cpp, https://codeforces.com/contest/1402/problem/C, /home/azimjon/rd/codeforces/contests/cgr10/A.cpp, https://codeforces.com/contest/1392/problem/A, /home/azimjon/rd/codeforces/contests/cgr10/B.cpp, https://codeforces.com/contest/1392/problem/B, /home/azimjon/rd/codeforces/contests/cgr10/C.cpp, https://codeforces.com/contest/1392/problem/C, /home/azimjon/rd/codeforces/contests/ecr92/A, https://codeforces.com/contest/1389/problem/0, /home/azimjon/rd/codeforces/contests/ecr92/B.cpp, https://codeforces.com/contest/1389/problem/B, /home/azimjon/rd/codeforces/contests/ecr92/C.cpp, https://codeforces.com/contest/1389/problem/C, /home/azimjon/rd/codeforces/contests/ecr93/A.cpp, https://codeforces.com/contest/1398/problem/A, /home/azimjon/rd/codeforces/contests/ecr93/B.cpp, https://codeforces.com/contest/1398/problem/B, /home/azimjon/rd/codeforces/contests/ecr93/C.cpp, https://codeforces.com/contest/1398/problem/C, /home/azimjon/rd/codeforces/contests/ecr93/D.cpp, https://codeforces.com/contest/1398/problem/D, /home/azimjon/rd/codeforces/contests/ecr94/A.cpp, https://codeforces.com/contest/1400/problem/A, /home/azimjon/rd/codeforces/contests/ecr94/B.cpp, https://codeforces.com/contest/1400/problem/B, /home/azimjon/rd/codeforces/contests/ecr94/C.cpp, https://codeforces.com/contest/1400/problem/C, /home/azimjon/rd/codeforces/contests/ecr94/D.cpp, https://codeforces.com/contest/1400/problem/D, /home/azimjon/rd/codeforces/problemset/A.cpp, https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/A, /home/azimjon/rd/codeforces/problemset/A2.cpp, https://codeforces.com/problemset/problem/1381/A2, /home/azimjon/rd/codeforces/problemset/B.cpp, https://codeforces.com/problemset/problem/916/B, /home/azimjon/rd/codeforces/problemset/C.cpp, https://codeforces.com/problemset/problem/1379/C, /home/azimjon/rd/codeforces/problemset/D.cpp, https://codeforces.com/problemset/problem/1359/D, /home/azimjon/rd/codeforces/problemset/E.cpp, https://codeforces.com/problemset/problem/1363/E, /home/azimjon/rd/codeforces/problemset/F.cpp, https://codeforces.com/group/JugLzMGwZz/contest/291709/problem/F, /home/azimjon/rd/google/kickstart2020/E/A.cpp, https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bf4ed, D:/rd/acmp/stRMQ.cpp, "https://acmp.ru/asp/do/index.asp?main=task&id_course=2&id_section=20&id_topic=47&id_problem=605"
+force_close=false
+geometry=@Rect(54 64 1312 704)
+html_diff_viewer_length_limit=50000
+input_file_save_path=./sinovlar/kir/${basename}/${1-index}.in
+load_test_case_length_limit=5000000
+locale=English
+maximized_window=true
+message_length_limit=20000
+message_logger_font=@Variant(\0\0\0@\0\0\0\x12\0m\0o\0n\0o\0s\0p\0\x61\0\x63\0\x65@\"\0\0\0\0\0\0\xff\xff\xff\xff\x2\x1\0\x32\x10)
+opacity=100
+open_file_length_limit=20000
+open_old_file_for_old_problem_url=true
+output_display_length_limit=50000000
+output_length_limit=5000000
+replace_tabs=false
+restore_old_problem_url=true
+right_splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\0o\0\0\x1\xd6\x1\xff\xff\xff\xff\x1\0\0\0\x2\0)
+run_on_empty_testcase=true
+save_faster=true
+save_file_on_compilation=true
+save_file_on_execution=false
+save_tests=true
+show_compile_and_run_only=false
+splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x2\xb3\0\0\x2/\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
+tab_jump_out_parentheses=false
+tab_width=4
+test_case_maximum_height=300
+test_cases_font=@Variant(\0\0\0@\0\0\0\x12\0m\0o\0n\0o\0s\0p\0\x61\0\x63\0\x65@\"\0\0\0\0\0\0\xff\xff\xff\xff\x2\x1\0\x32\x10)
+testcases_matching_rules=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0(\0.\0*\0)\0\\\0.\0i\0n\0\0\0\f\0\\\0\x31\0.\0\x61\0n\0s), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0(\0.\0*\0)\0\\\0.\0i\0n\0\0\0\f\0\\\0\x31\0.\0o\0u\0t)
+time_limit=5000
+ui_style=Dark Fusion
+use_custom_application_font=false
+view_mode=split
+wrap_text=false
+
+[cf]
+path=cf
+show_toast_messages=true
+
+[clang_format]
+format_on_auto_save=false
+format_on_manual_save=true
+path=clang-format
+style=AlignTrailingComments: true\nAllowAllParametersOfDeclarationOnNextLine: true\nAllowShortLoopsOnASingleLine: false\nAllowShortIfStatementsOnASingleLine: true\nBasedOnStyle: Google\nBreakBeforeBinaryOperators: true\nIndentWidth: 4\nStandard: Cpp11\nSortIncludes: false\nTabWidth: 4\nUseTab: Always
+
+[competitive_companion]
+connection_port=10045
+enable=true
+open_new_tab=true
+
+[cpp]
+compile_command="g++ -std=c++17 -DDEBUG"
+compiler_output_codec=UTF-8
+output_path=/home/azimjon/rd/a.out
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+run_arguments=
+template_cursor_position_offset_characters=4
+template_cursor_position_offset_type=end
+template_cursor_position_regex=main\\(\\)
+template_path=/home/azimjon/rd/candoza.cpp
+
+[default_path]
+action\add_pairs_of_test_cases\changes=testcase
+action\add_pairs_of_test_cases\uses=${testcase}
+action\custom_checker\changes=checker
+action\custom_checker\uses=${checker}
+action\export_and_import_settings\changes=settings
+action\export_and_import_settings\uses=${settings}
+action\export_and_load_session\changes=session
+action\export_and_load_session\uses=${session}
+action\extract_and_load_snippets\changes=snippets
+action\extract_and_load_snippets\uses=${snippets}
+action\load_single_test_case\changes=testcase
+action\load_single_test_case\uses=${testcase}
+action\open_contest\changes="contest, file, testcase, checker"
+action\open_contest\uses=${contest}
+action\open_file\changes="file, testcase, checker"
+action\open_file\uses=${file}
+action\save_file\changes="file, testcase, checker"
+action\save_file\uses=${file}
+names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0h\0\x65\0\x63\0k\0\x65\0r\0\0\0T\0/\0h\0o\0m\0\x65\0/\0\x61\0z\0i\0m\0j\0o\0n\0/\0r\0\x64\0/\0I\0O\0I\0_\0t\0r\0\x61\0i\0n\0i\0n\0g\0/\0m\0u\0s\0t\0_\0s\0o\0l\0v\0\x65\0_\0\x31), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0@\0/\0h\0o\0m\0\x65\0/\0\x61\0z\0i\0m\0j\0o\0n\0/\0r\0\x64\0/\0r\0o\0\x62\0o\0\x63\0o\0n\0t\0\x65\0s\0t\0/\0r\0\x32\0\x32), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\b\0\x66\0i\0l\0\x65\0\0\0T\0/\0h\0o\0m\0\x65\0/\0\x61\0z\0i\0m\0j\0o\0n\0/\0r\0\x64\0/\0I\0O\0I\0_\0t\0r\0\x61\0i\0n\0i\0n\0g\0/\0m\0u\0s\0t\0_\0s\0o\0l\0v\0\x65\0_\0\x31), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0 \0/\0h\0o\0m\0\x65\0/\0\x61\0z\0i\0m\0j\0o\0n\0/\0r\0\x64), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0t\0\x65\0s\0t\0\x63\0\x61\0s\0\x65\0\0\0T\0/\0h\0o\0m\0\x65\0/\0\x61\0z\0i\0m\0j\0o\0n\0/\0r\0\x64\0/\0I\0O\0I\0_\0t\0r\0\x61\0i\0n\0i\0n\0g\0/\0m\0u\0s\0t\0_\0s\0o\0l\0v\0\x65\0_\0\x31)
+
+[hot_exit]
+auto_save=true
+auto_save_interval=20000
+enable=true
+
+[hotkey]
+change_view_mode=F6
+compile=F9
+compile_run=F11
+format=F5
+kill=F12
+run=F10
+snippets=Ctrl+Space
+
+[java]
+class_name=Main
+compile_command=javac
+compiler_output_codec=UTF-8
+output_path=${tmpdir}
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+run_arguments=
+run_command=java
+template_cursor_position_offset_characters=0
+template_cursor_position_offset_type=end
+template_cursor_position_regex=
+template_path=
+
+[lsp]
+args_cpp=
+args_java=
+args_python=-m pyls
+delay_cpp=2000
+delay_java=2000
+delay_python=2000
+path_cpp=clangd
+path_java=
+path_python=python
+use_autocomplete_cpp=false
+use_autocomplete_java=false
+use_autocomplete_python=false
+use_linting_cpp=false
+use_linting_java=false
+use_linting_python=false
+
+[proxy]
+enabled=false
+host_name=127.0.0.1
+password=
+port=1080
+type=System
+user=
+
+[python]
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+run_arguments=
+run_command=python3
+template_cursor_position_offset_characters=0
+template_cursor_position_offset_type=end
+template_cursor_position_regex=
+template_path=

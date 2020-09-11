@@ -1,0 +1,16 @@
+5 15
+add 1 1
+add 2 2
+add 3 3
+add 4 4
+add 5 5
+add 1 5
+add 2 4
+add 3 3
+add 4 2
+add 5 1
+rsq 1 1 5 5
+rsq 2 1 5 5
+rsq 1 2 5 5
+rsq 2 2 4 4
+rsq 3 3 3 3

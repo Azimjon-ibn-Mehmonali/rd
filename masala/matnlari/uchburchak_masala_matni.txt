@@ -1,0 +1,8 @@
+Azimjon jiyani Otabekning geometriya fanini qay darajada yaxshi bilishini sinab ko'rmoqchi. Shuning uchun u bir masala o'ylab topdi. Azimjon Otabekka dekart koordinatalar sistemasidagi uchta nuqta koordinatalarini aytadi. Otabek esa uchlari shu nuqtalardan tashkil topgan uchburchak mavjud yoki mavjud emasligini topishi lozim. Otabek hisob kitobga dangasaroq, shuning uchun u bu masalani yechish uchun dastur tuzmoqchi. Otabekka yordam bering!
+
+Kirish
+Uchta satrda nuqtalarningning xi, yi(1<=i<=3) koordinatalari.
+-10^9 <= xi, yi <= 10^9
+
+Chiqish
+Agar kiritilgan nuqtalar uchburchak uchlarini tashkil qilsa "uchburchak", aks holda "uchburchak emas" so'zlarini(qo'shtirnoqlarsiz) chop eting.
