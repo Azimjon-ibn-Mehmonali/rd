@@ -67,7 +67,6 @@ signed main() {
 	d[0][0] = d[0][1] = s[0] - 48;
 
 	for (int i = 1; i < 2 * n; i++) {
-		//
 	}
 
 	return 0;
