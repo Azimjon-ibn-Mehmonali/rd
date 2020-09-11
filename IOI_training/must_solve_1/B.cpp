@@ -57,5 +57,31 @@ const int INF = 1e18;
 signed main() {
 	TEZ;
 
+	int n;
+	cin >> n;
+
+	vi t(n), c(n);
+	for (int i = 0; i < n; i++) {
+		cin >> t[i] >> c[i];
+		t[i]++;
+	}
+
+	const int N = 10000;
+
+	vi d(N, INF);
+	d[0] = 0;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = N / 2; j >= 0; j--) {
+			d[j + t[i]] = min(d[j + t[i]], d[j] + c[i]);
+		}
+	}
+	// xtp1(d);
+	int jv = INF;
+	for (int i = n; i < N; i++)
+		jv = min(jv, d[i]);
+
+	cout << jv << endl;
+
 	return 0;
 }

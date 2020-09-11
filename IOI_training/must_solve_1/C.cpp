@@ -26,7 +26,7 @@
 
 using namespace std;
 
-#define int long long
+#define int unsigned long long
 
 typedef unsigned long long ull;
 typedef long double ld;
@@ -56,6 +56,19 @@ const int INF = 1e18;
 
 signed main() {
 	TEZ;
+
+	int n;
+	cin >> n;
+
+	string s;
+	cin >> s;
+
+	int d[50][2];
+	d[0][0] = d[0][1] = s[0] - 48;
+
+	for (int i = 1; i < 2 * n; i++) {
+		//
+	}
 
 	return 0;
 }
