@@ -54,8 +54,21 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+void f() {
+	int n, x;
+	cin >> n >> x;
+	
+	cout << 2 * x << endl;
+}
+
 signed main() {
 	TEZ;
+	
+	int t;
+	cin >> t;
+	
+	while (t--)
+		f();
 
 	return 0;
 }
