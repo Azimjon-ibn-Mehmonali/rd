@@ -8,17 +8,33 @@ using namespace std;
 
 std::string guess_sequence(int N) {
 	string f;
+	if (N == 1) {
+		if (press("A"))
+			f = "A";
+		else if (press("B"))
+			f = "B";
+		else if (press("X"))
+			f = "X";
+		else
+			f = "Y";
+		
+		return f;
+	}
 
-	if (press("A"))
-		f = "A";
-	else if (press("B"))
-		f = "B";
-	else if (press("X"))
-		f = "X";
-	else
-		f = "Y";
 
-	if (N == 1) return f;
+	int t = press("AB");
+		
+	if (t) {
+		if (press("A"))
+			f = "A";
+		else 
+			f = "B";
+	} else {
+		if (press("X"))
+			f = "X";
+		else
+			f = "Y";
+	}
 
 	if (f == "A") {
 		for (int i = 0; i < N - 2; i++) {
