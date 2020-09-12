@@ -57,5 +57,28 @@ const int INF = 1e18;
 signed main() {
 	TEZ;
 
+	int n;
+	cin >> n;
+
+	vi a;
+	string s;
+
+	for (int i = 0; i < n; i++) {
+		cin >> s;
+
+		if (s == "TRUTH")
+			a.pb(1);
+		else
+			a.pb(0);
+	}
+
+	for (int i = n - 1; i > 0; i--) {
+		if (a[i] == 0) {
+			a[i - 1] ^= 1;
+		}
+	}
+
+	cout << (a[0] ? "TRUTH" : "LIE") << endl;
+
 	return 0;
 }

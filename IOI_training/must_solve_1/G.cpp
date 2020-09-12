@@ -54,8 +54,39 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+int a[300][300];
+
 signed main() {
 	TEZ;
+
+	int n, m, k;
+	cin >> n >> m >> k;
+
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= m; j++) {
+			cin >> a[i][j];
+		}
+	}
+	int x, y;
+	x = y = 0;
+	for (int j = 1; j <= m; j++) {
+		ii jv = {0, INF};
+		int bs = 0;
+		for (int i = 0; i <= n; i++) {
+			bs += a[i][j];
+			int yi = 0;
+			for (int e = i + 1; e <= (n, i + k); e++)
+				yi += a[e][j];
+			jv = max(jv, {yi, -bs});
+		}
+
+		if (bs == 0 || jv.S == INF) continue;
+
+		x += jv.F;
+		y += -jv.S;
+	}
+
+	cout << x << " " << y << endl;
 
 	return 0;
 }

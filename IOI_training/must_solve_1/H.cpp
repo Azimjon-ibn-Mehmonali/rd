@@ -57,5 +57,22 @@ const int INF = 1e18;
 signed main() {
 	TEZ;
 
+	int n, k, x;
+	cin >> n >> k >> x;
+
+	vi a(n);
+	for (int &i : a)
+		cin >> i;
+	SORT(a);
+	xtp(a);
+	if (k % 2) {
+		for (int &i : a)
+			i = i | x;
+	}
+	xtp(a);
+	SORT(a);
+
+	cout << a.back() << " " << a[0] << endl;
+
 	return 0;
 }
