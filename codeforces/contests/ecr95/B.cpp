@@ -1,7 +1,7 @@
 
-// Problem: D. Vasya and Basketball
-// Contest: Codeforces - Practice #3
-// URL: https://codeforces.com/group/mcSSKLGGT5/contest/294889/problem/D
+// Problem: B. Negative Prefixes
+// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
+// URL: https://codeforces.com/contest/1418/problem/B
 // Memory Limit: 256 MB
 // Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -54,51 +54,70 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+void f() {
+	int n;
+	cin >> n;
+
+	int yi = 0;
+
+	vi a(n), l(n);
+	for (int &i : a) {
+		cin >> i;
+		yi += i;
+	}
+	for (int &i : l)
+		cin >> i;
+
+	vi t;
+
+	for (int i = 0; i < n; i++) {
+		if (l[i] == 0) {
+			t.pb(a[i]);
+		}
+	}
+	vi q(n);
+	function<bool(vi)> te = [&](vi w) {
+		for (int i = 0; i < n; i++) {
+			if (l[i] == 0) {
+				q[i] = w.back();
+				w.pop_back();
+			} else {
+				q[i] = a[i];
+			}
+		}
+
+		bool ha = 1;
+		int s = 0;
+		for (int &i : q) {
+			s += i;
+			ha &= s >= 0;
+		}
+
+		return ha;
+	};
+
+	SORT(t);
+	if (te(t))
+		goto n1;
+	else {
+		rSORT(t);
+		goto n1;
+	}
+
+n1:
+	for (int &i : q)
+		cout << i << " ";
+	cout << endl;
+}
+
 signed main() {
 	TEZ;
 
-	int n, m;
-	cin >> n;
+	int t;
+	cin >> t;
 
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-
-	cin >> m;
-	vi b(m);
-	for (int &i : b)
-		cin >> i;
-
-	SORT(a);
-	SORT(b);
-
-	int x, y;
-	x = -INF;
-	y = INF;
-	for (int i = 0; i < n; i++) {
-		if (i + 1 < n && a[i + 1] == a[i]) continue;
-		int h = a[i];
-		int s = 2 * (i) + 3 * (n - i);
-
-		int it = upper_bound(ALL(b), h) - b.begin();
-
-		int sb = 2 * it + 3 * (m - it);
-
-		if (s - sb > x - y) {
-			x = s;
-			y = sb;
-			xtp(b);
-			xtp(i);
-			xtp(h);
-			xtp(x);
-			xtp(y);
-			xtp(it);
-		} /*else if (s - sb == x - y) {
-			if (x < s) x = s, y = sb;
-		}*/
-	}
-
-	cout << x << ":" << y << endl;
+	while (t--)
+		f();
 
 	return 0;
 }

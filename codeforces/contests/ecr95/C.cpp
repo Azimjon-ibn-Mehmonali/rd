@@ -1,9 +1,9 @@
 
-// Problem: D. Vasya and Basketball
-// Contest: Codeforces - Practice #3
-// URL: https://codeforces.com/group/mcSSKLGGT5/contest/294889/problem/D
+// Problem: C. Mortal Kombat Tower
+// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
+// URL: https://codeforces.com/contest/1418/problem/C
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,51 +54,42 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-signed main() {
-	TEZ;
-
-	int n, m;
+void f() {
+	int n;
 	cin >> n;
-
 	vi a(n);
 	for (int &i : a)
 		cin >> i;
 
-	cin >> m;
-	vi b(m);
-	for (int &i : b)
-		cin >> i;
-
-	SORT(a);
-	SORT(b);
-
-	int x, y;
-	x = -INF;
-	y = INF;
-	for (int i = 0; i < n; i++) {
-		if (i + 1 < n && a[i + 1] == a[i]) continue;
-		int h = a[i];
-		int s = 2 * (i) + 3 * (n - i);
-
-		int it = upper_bound(ALL(b), h) - b.begin();
-
-		int sb = 2 * it + 3 * (m - it);
-
-		if (s - sb > x - y) {
-			x = s;
-			y = sb;
-			xtp(b);
-			xtp(i);
-			xtp(h);
-			xtp(x);
-			xtp(y);
-			xtp(it);
-		} /*else if (s - sb == x - y) {
-			if (x < s) x = s, y = sb;
-		}*/
+	bool men = 0;
+	int i = 0;
+	int jv = 0;
+	for (; i < n;) {
+		if (men) {
+			i++;
+			if (i < n && a[i]) i++;
+		} else {
+			// xtp(i);
+			if (i < n && a[i])
+				jv++, i++;
+			else
+				i++;
+			if (i < n && a[i] == 0) i++;
+		}
+		men = !men;
 	}
 
-	cout << x << ":" << y << endl;
+	cout << jv << endl;
+}
+
+signed main() {
+	TEZ;
+
+	int t;
+	cin >> t;
+
+	while (t--)
+		f();
 
 	return 0;
 }

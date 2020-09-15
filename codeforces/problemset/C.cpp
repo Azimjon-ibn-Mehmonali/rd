@@ -1,9 +1,9 @@
 
-// Problem: C. Choosing flowers
-// Contest: Codeforces - Codeforces Round #657 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/1379/C
-// Memory Limit: 512 MB
-// Time Limit: 1000 ms
+// Problem: C. Graph and String
+// Contest: Codeforces - Practice #3
+// URL: https://codeforces.com/group/mcSSKLGGT5/contest/294889/problem/C
+// Memory Limit: 256 MB
+// Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,58 +54,85 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-void f() {
-	int n, m;
-	cin >> n >> m;
-
-	vii v(m);
-	for (auto &[x, y] : v) {
-		cin >> x >> y;
-	}
-
-	rSORT(v);
-
-	vi p;
-	p.pb(0);
-	for (int i = 0; i < m; i++) {
-		p.pb(p.back() + v[i].F);
-	}
-
-	int jv = -1;
-	xtp(p);
-	for (int i = 0; i < m; i++) {
-		int y = v[i].S;
-		int k = lower_bound(ALL(v), ii{y, INF}, greater<ii>()) - v.begin();
-
-		k = min(n, k);
-		xtp(k);
-		// xtp((*lower_bound(ALL(v), ii{y, INF})));
-
-		int jj;
-
-		if (k > i) {
-			jj = p[k] + (n - k) * v[i].S;
-		} else {
-			if (k > n - 1) k--;
-
-			jj = p[k] + v[i].F + (n - k - 1) * v[i].S;
-		}
-
-		jv = max(jj, jv);
-		xtp(jj);
-	}
-
-	cout << jv << endl;
-}
+int a[600][600];
 
 signed main() {
 	TEZ;
 
-	int t;
-	cin >> t;
+	int n, m;
+	cin >> n >> m;
 
-	while (t--)
-		f();
+	vector<vi> g(n + 1, vi());
+	int x, y;
+	for (int i = 0; i < m; i++) {
+		cin >> x >> y;
+
+		a[x][y] = a[y][x] = 1;
+		g[x].pb(y);
+		g[y].pb(x);
+	}
+
+	string s(n + 1, '-');
+
+	for (int i = 1; i <= n; i++) {
+		if (g[i].size() == n - 1) {
+			s[i] = 'b';
+		}
+	}
+
+	for (int i = 1; i <= n; i++) {
+		if (s[i] == '-') {
+			s[i] = 'a';
+			for (int h : g[i]) {
+				if (s[h] == '-') s[h] = 'a';
+			}
+			break;
+		}
+	}
+
+	bool ja = 1;
+	for (int i = 1; i <= n; i++) {
+		if (s[i] == '-') {
+			s[i] = 'c';
+			bool ha = 1;
+
+			for (int h : g[i]) {
+				if (s[h] == 'a') {
+					ha = 0;
+					break;
+				}
+				if (s[h] == '-') s[h] = 'c';
+			}
+			ja &= ha;
+			break;
+		}
+	}
+	xtp(ja);
+	for (int i = 1; i <= n; i++) {
+		ja &= s[i] != '-';
+	}
+
+	for (int i = 1; i <= n - 1; i++) {
+		for (int j = i + 1; j <= n; j++) {
+			if (s[i] == s[j] || s[i] + 1 == s[j] || s[j] + 1 == s[i]) {
+				ja &= a[i][j];
+			}
+		}
+	}
+
+	for (int i = 1; i < n; i++) {
+		for (int j = i + 1; j <= n; j++) {
+			if (a[i][j]) {
+				ja &= (s[i] == s[j]) || (abs(s[i] - s[j]) == 1);
+			}
+		}
+	}
+
+	if (ja) {
+		cout << "Yes\n" << s.substr(1, n) << endl;
+	} else {
+		cout << "No\n" << endl;
+	}
 
 	return 0;
 }
