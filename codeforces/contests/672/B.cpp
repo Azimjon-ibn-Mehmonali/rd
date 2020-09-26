@@ -1,7 +1,7 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: B. Rock and Lever
+// Contest: Codeforces - Codeforces Round #672 (Div. 2)
+// URL: https://codeforces.com/contest/1420/problem/B
 // Memory Limit: 256 MB
 // Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -61,19 +61,26 @@ void f() {
 	vi a(n);
 	for (int &i : a)
 		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
 
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
+	SORT(a);
+	int jv = 0;
 
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
+	for (int i = 0; i < n - 1; i++) {
+		int k = 0, r = a[i];
+		while (r) {
+			k++;
+			r /= 2;
+		}
+		auto f = upper_bound(ALL(a), (1 << (k)) - 1);
+		// if (f == a.end()) continue;
+		xtp(a[i]);
+		xtp(k);
+		xtp((1 << (k)) - 1);
+		xtp(*f);
+		jv += f - (a.begin() + i) - 1;
 	}
 
-	cout << min(d[n][0], d[n][1]) << endl;
+	cout << jv << endl;
 }
 
 signed main() {

@@ -1,9 +1,9 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: D. Decrease the Sum of Digits
+// Contest: Codeforces - Codeforces Round #667 (Div. 3)
+// URL: https://codeforces.com/contest/1409/problem/D
 // Memory Limit: 256 MB
-// Time Limit: 1000 ms
+// Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -55,25 +55,27 @@ const int mod = 1000000007LL;
 const int INF = 1e18;
 
 void f() {
-	int n;
-	cin >> n;
+	int n, s;
+	cin >> n >> s;
 
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
+	function<int(int)> ry = [&](int r) {
+		int jv = 0;
+		while (r)
+			jv += r % 10, r /= 10;
+		return jv;
+	};
 
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
-
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
+	int q = 1, b = 10, jv = 0;
+	while (ry(n) > s) {
+		while (n % b == 0) {
+			q *= 10;
+			b *= 10;
+		}
+		n += q;
+		jv += q;
 	}
 
-	cout << min(d[n][0], d[n][1]) << endl;
+	cout << jv << endl;
 }
 
 signed main() {

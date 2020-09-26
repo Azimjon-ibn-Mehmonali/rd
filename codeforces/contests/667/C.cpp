@@ -1,7 +1,7 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: C. Yet Another Array Restoration
+// Contest: Codeforces - Codeforces Round #667 (Div. 3)
+// URL: https://codeforces.com/contest/1409/problem/C
 // Memory Limit: 256 MB
 // Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -55,25 +55,28 @@ const int mod = 1000000007LL;
 const int INF = 1e18;
 
 void f() {
-	int n;
-	cin >> n;
-
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
-
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
-
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
+	int n, x, y;
+	cin >> n >> x >> y;
+	vi j;
+	for (int i = 1; i <= y - x; i++) {
+		vi a;
+		for (int k = x; k <= y; k += i)
+			a.pb(k);
+		if (a.back() != y) continue;
+		if (a.size() > n) continue;
+		int q = n - a.size();
+		for (int g = x - i; g > 0 && q > 0; g -= i, q--) {
+			a.insert(a.begin(), g);
+		}
+		for (int g = y + i; q > 0; g += i, q--) {
+			a.pb(g);
+		}
+		j = a;
+		break;
 	}
-
-	cout << min(d[n][0], d[n][1]) << endl;
+	for (int g : j)
+		cout << g << " ";
+	cout << endl;
 }
 
 signed main() {

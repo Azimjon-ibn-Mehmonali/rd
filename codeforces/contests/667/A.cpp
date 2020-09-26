@@ -1,7 +1,7 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: A. Yet Another Two Integers Problem
+// Contest: Codeforces - Codeforces Round #667 (Div. 3)
+// URL: https://codeforces.com/contest/1409/problem/A
 // Memory Limit: 256 MB
 // Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -54,36 +54,20 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-void f() {
-	int n;
-	cin >> n;
-
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
-
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
-
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
-	}
-
-	cout << min(d[n][0], d[n][1]) << endl;
-}
-
 signed main() {
 	TEZ;
 
 	int t;
 	cin >> t;
 
-	while (t--)
-		f();
+	while (t--) {
+		int a, b;
+		cin >> a >> b;
+
+		int k = llabs(b - a);
+
+		cout << (k / 10 + bool(k % 10)) << endl;
+	}
 
 	return 0;
 }

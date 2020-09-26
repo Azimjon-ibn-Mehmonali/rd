@@ -1,9 +1,9 @@
 
-// Problem: D. Vasya and Basketball
-// Contest: Codeforces - Practice #3
-// URL: https://codeforces.com/group/mcSSKLGGT5/contest/294889/problem/D
+// Problem: D. Grid-00100
+// Contest: Codeforces - Codeforces Round #654 (Div. 2)
+// URL: https://codeforces.com/problemset/problem/1371/D
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -56,49 +56,6 @@ const int INF = 1e18;
 
 signed main() {
 	TEZ;
-
-	int n, m;
-	cin >> n;
-
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-
-	cin >> m;
-	vi b(m);
-	for (int &i : b)
-		cin >> i;
-
-	SORT(a);
-	SORT(b);
-
-	int x, y;
-	x = -INF;
-	y = INF;
-	for (int i = 0; i < n; i++) {
-		if (i + 1 < n && a[i + 1] == a[i]) continue;
-		int h = a[i];
-		int s = 2 * (i) + 3 * (n - i);
-
-		int it = upper_bound(ALL(b), h) - b.begin();
-
-		int sb = 2 * it + 3 * (m - it);
-
-		if (s - sb > x - y) {
-			x = s;
-			y = sb;
-			xtp(b);
-			xtp(i);
-			xtp(h);
-			xtp(x);
-			xtp(y);
-			xtp(it);
-		} /*else if (s - sb == x - y) {
-			if (x < s) x = s, y = sb;
-		}*/
-	}
-
-	cout << x << ":" << y << endl;
 
 	return 0;
 }

@@ -1,9 +1,9 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: C1. Pokémon Army (easy version)
+// Contest: Codeforces - Codeforces Round #672 (Div. 2)
+// URL: https://codeforces.com/contest/1420/problem/C1
 // Memory Limit: 256 MB
-// Time Limit: 1000 ms
+// Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -55,25 +55,37 @@ const int mod = 1000000007LL;
 const int INF = 1e18;
 
 void f() {
-	int n;
-	cin >> n;
+	int n, q;
+	cin >> n >> q;
 
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
+	vi a(n + 1);
+	for (int i = 1; i <= n; i++)
+		cin >> a[i];
 
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
+	bool os = 1;
+	int jv = 0;
 
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
+	for (int i = 2; i <= n; i++) {
+		if (os) {
+			if (a[i - 1] < a[i]) continue;
+			jv += a[i - 1];
+			xtp("ka");
+			xtp(a[i - 1]);
+			os = !os;
+		} else {
+			if (a[i - 1] > a[i]) continue;
+			jv -= a[i - 1];
+			xtp("ki");
+			xtp(a[i - 1]);
+			os = !os;
+		}
 	}
 
-	cout << min(d[n][0], d[n][1]) << endl;
+	if (os) {
+		jv += a.back();
+	}
+
+	cout << jv << endl;
 }
 
 signed main() {
@@ -82,8 +94,9 @@ signed main() {
 	int t;
 	cin >> t;
 
-	while (t--)
+	while (t--) {
 		f();
+	}
 
 	return 0;
 }

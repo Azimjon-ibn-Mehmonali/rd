@@ -1,9 +1,9 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: D. Rescue Nibel!
+// Contest: Codeforces - Codeforces Round #672 (Div. 2)
+// URL: https://codeforces.com/contest/1420/problem/D
 // Memory Limit: 256 MB
-// Time Limit: 1000 ms
+// Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,36 +54,28 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-void f() {
-	int n;
-	cin >> n;
-
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
-
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
-
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
-	}
-
-	cout << min(d[n][0], d[n][1]) << endl;
-}
-
 signed main() {
 	TEZ;
 
-	int t;
-	cin >> t;
+	int n, k;
+	cin >> n >> k;
 
-	while (t--)
-		f();
+	vii a;
+	int x, y;
+	for (int i = 0; i < n; i++) {
+		cin >> x >> y;
+
+		a.pb({x, 1});
+		a.pb({y, -1});
+	}
+
+	SORT(a);
+
+	int h = 0;
+	int jv = 0;
+	for (int i = 0; i < (int)a.size(); i++) {
+		h += a[i].
+	}
 
 	return 0;
 }

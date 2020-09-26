@@ -1,7 +1,7 @@
 
-// Problem: C. Mortal Kombat Tower
-// Contest: Codeforces - Educational Codeforces Round 95 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1418/problem/C
+// Problem: B. Minimum Product
+// Contest: Codeforces - Codeforces Round #667 (Div. 3)
+// URL: https://codeforces.com/contest/1409/problem/B
 // Memory Limit: 256 MB
 // Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -55,25 +55,54 @@ const int mod = 1000000007LL;
 const int INF = 1e18;
 
 void f() {
-	int n;
-	cin >> n;
+	int a, b, x, y, n;
+	cin >> a >> b >> x >> y >> n;
 
-	vi a(n);
-	for (int &i : a)
-		cin >> i;
-	a.insert(a.begin(), 0);
-	vector<vi> d(n + 1, vi(2, INF));
-	d[0][1] = 0;
+	int aa, bb, xx, yy, nn;
+	aa = a;
+	bb = b;
+	xx = x;
+	yy = y;
+	nn = n;
+	if (x > y) {
+		swap(x, y);
+		swap(a, b);
+	}
+	int jv = INF;
 
-	for (int i = 0; i <= n; i++) {
-		if (i > 0) d[i][1] = min(d[i][1], d[i - 1][0]);
-		if (i > 1) d[i][1] = min(d[i][1], d[i - 2][0]);
+	{
+		int z = min(a - x, n);
+		n -= z;
+		a -= z;
 
-		if (i > 0) d[i][0] = min(d[i][0], d[i - 1][1] + a[i]);
-		if (i > 1) d[i][0] = min(d[i][0], d[i - 2][1] + a[i - 1] + a[i]);
+		z = min(b - y, n);
+		n -= z;
+		b -= z;
+
+		jv = min(jv, a * b);
+	}
+	a = aa;
+	b = bb;
+	x = xx;
+	y = yy;
+	n = nn;
+	if (a > b) {
+		swap(x, y);
+		swap(a, b);
+	}
+	{
+		int z = min(a - x, n);
+		n -= z;
+		a -= z;
+
+		z = min(b - y, n);
+		n -= z;
+		b -= z;
+
+		jv = min(jv, a * b);
 	}
 
-	cout << min(d[n][0], d[n][1]) << endl;
+	cout << jv << endl;
 }
 
 signed main() {
