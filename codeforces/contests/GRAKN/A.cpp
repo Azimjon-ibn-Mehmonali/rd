@@ -1,9 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
+// Problem: A. Circle Coloring
+// Contest: Codeforces - Grakn Forces 2020
+// URL: https://codeforces.com/contest/1408/problem/A
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,52 +54,54 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-signed main() {
-	TEZ;
-
+void f() {
 	int n;
 	cin >> n;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
-	}
+	vi a(n), b(n), c(n);
+	for (int &i : a)
+		cin >> i;
+	for (int &i : b)
+		cin >> i;
+	for (int &i : c)
+		cin >> i;
 
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
+	vi p = {-1};
+	for (int i = 0; i < n - 1; i++) {
+		if (p.back() != a[i]) {
+			p.pb(a[i]);
+			continue;
+		}
+		if (p.back() != b[i]) {
+			p.pb(b[i]);
+			continue;
+		}
+		if (p.back() != c[i]) {
+			p.pb(c[i]);
+			continue;
 		}
 	}
+	int t = p.back(), y = p[1];
+	set<int> s({a[n - 1], b[n - 1], c[n - 1]});
+	xtp(s);
+	s.erase(t);
+	s.erase(y);
+	p[n] = *prev(s.end());
 
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
+	for (int i = 1; i <= n; i++) {
+		cout << p[i] << " ";
+	}
 	cout << endl;
+}
 
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+signed main() {
+	TEZ;
+
+	int t;
+	cin >> t;
+
+	while (t--)
+		f();
 
 	return 0;
 }

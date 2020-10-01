@@ -1,9 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
+// Problem: B. Arrays Sum
+// Contest: Codeforces - Grakn Forces 2020
+// URL: https://codeforces.com/contest/1408/problem/B
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,52 +54,63 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+void f() {
+	int n, k;
+	cin >> n >> k;
+
+	vi a(n);
+	set<int> s;
+	for (int i = 0; i < n; i++) {
+		cin >> a[i];
+		s.insert(a[i]);
+	}
+
+	if (k == 1) {
+		if (s.size() == 1) {
+			cout << 1 << endl;
+			return;
+		}
+		cout << -1 << endl;
+		return;
+	}
+
+	int jv = 0;
+	while (true) {
+		jv++;
+		int g = 1;
+		int d = a[0];
+		a[0] = 0;
+		for (int i = 1; i < n; i++) {
+			if (g == k) {
+				a[i] -= d;
+				continue;
+			}
+			if (d < a[i]) {
+				g++;
+				xtp(d);
+				d = a[i];
+				a[i] -= d;
+			} else {
+				a[i] -= d;
+			}
+		}
+		xtp(a);
+		xtp(d);
+		xtp(g);
+		int yi = accumulate(ALL(a), 0);
+		if (yi == 0) break;
+	}
+	cout << jv << endl;
+}
+
 signed main() {
 	TEZ;
 
-	int n;
-	cin >> n;
+	int t;
+	cin >> t;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
-	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+	while (t--)
+		f();
 
 	return 0;
 }

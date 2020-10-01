@@ -1,9 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
+// Problem: B. Two Arrays
+// Contest: Codeforces - Codeforces Round #673 (Div. 2)
+// URL: https://codeforces.com/contest/1417/problem/B
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,52 +54,48 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-signed main() {
-	TEZ;
+void f() {
+	int n, t;
+	cin >> n >> t;
 
-	int n;
-	cin >> n;
+	vi a(n);
+	int ys = 0;
+	for (int &i : a) {
+		cin >> i;
+		ys += i == t / 2;
+	}
 
-	vii a(n);
+	// SORT(a);
+	vi b(n, 0);
+	map<int, int> mp;
 	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
+		if (a[i] == t / 2 && t % 2 == 0) continue;
+		mp[a[i]] = 1;
+		mp[t - a[i]] = 2;
 	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
+	int x = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] == t / 2 && t % 2 == 0) {
+			b[i] = x;
+			x ^= 1;
 		} else {
-			on.pb(a[i].S);
+			b[i] = mp[a[i]] - 1;
 		}
 	}
 
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
+	for (int i = 0; i < n; i++)
+		cout << b[i] << " ";
 	cout << endl;
+}
 
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+signed main() {
+	TEZ;
+
+	int t;
+	cin >> t;
+
+	while (t--)
+		f();
 
 	return 0;
 }

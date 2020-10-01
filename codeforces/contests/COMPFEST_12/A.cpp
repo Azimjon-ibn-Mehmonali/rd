@@ -1,10 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
+// Problem: A. Arena of Greed
+// Contest: Codeforces - 2020 ICPC, COMPFEST 12, Indonesia Multi-Provincial
+// Contest (Unrated, Online Mirror, ICPC Rules, Teams Preferred) URL:
+// https://codeforces.com/contest/1425/problem/A Memory Limit: 256 MB Time
+// Limit: 2000 ms Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
 
@@ -54,52 +53,38 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+void f() {
+	int n;
+	cin >> n;
+	bool c = 1;
+	int jv = 0;
+	while (n) {
+		if (c) {
+			if (n % 2 == 0 && n % 4 != 0)
+				jv += n / 2, n /= 2;
+			else
+				jv++, n--;
+		} else {
+			if (n % 2 == 0 && n % 4 != 0)
+				n /= 2;
+			else
+				n--;
+		}
+
+		c = !c;
+	}
+
+	cout << jv << endl;
+}
+
 signed main() {
 	TEZ;
 
-	int n;
-	cin >> n;
+	int t;
+	cin >> t;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
-	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+	while (t--)
+		f();
 
 	return 0;
 }

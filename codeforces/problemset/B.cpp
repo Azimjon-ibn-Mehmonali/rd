@@ -1,7 +1,7 @@
 
-// Problem: B. Jamie and Binary Sequence (changed after round)
-// Contest: Codeforces - Codeforces Round #457 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/916/B
+// Problem: B. Quantity of Strings
+// Contest: Codeforces - Codeforces Round #107 (Div. 1)
+// URL: https://codeforces.com/problemset/problem/150/B
 // Memory Limit: 256 MB
 // Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -56,6 +56,26 @@ const int INF = 1e18;
 
 signed main() {
 	TEZ;
+
+	int n, m, k;
+	cin >> n >> m >> k;
+
+	int jv;
+	if (k == 1 || n < k) {
+		jv = 1;
+		for (int i = 0; i < n; i++)
+			jv *= m, jv %= mod;
+	} else if (k == n) {
+		jv = 1;
+		for (int i = 0; i < (n + 1) / 2; i++)
+			jv *= m, jv %= mod;
+	} else if (k & 1) {
+		jv = (m * m) % mod;
+	} else {
+		jv = m;
+	}
+
+	cout << jv << endl;
 
 	return 0;
 }

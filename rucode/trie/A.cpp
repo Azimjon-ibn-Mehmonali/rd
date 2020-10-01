@@ -1,18 +1,10 @@
-
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 // Muallif: Azimjon Mehmonali o'g'li
 
 //=========================================================
 
-// #pragma GCC optimize("Ofast")
+#pragma GCC optimize("Ofast")
 // #pragma GCC target("avx,avx2,fma")
-// #pragma GCC optimization ("unroll-loops")
+#pragma GCC optimization("unroll-loops")
 
 //=========================================================
 #ifdef DEBUG
@@ -26,7 +18,7 @@
 
 using namespace std;
 
-#define int long long
+// #define int unsigned short
 
 typedef unsigned long long ull;
 typedef long double ld;
@@ -48,58 +40,55 @@ typedef vector<ii> vii;
 
 #define TEZ                  \
 	ios::sync_with_stdio(0); \
-	cin.tie(0);
-
+	cin.tie(0);              \
+	cout.tie(0);
+/*
 const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
+*/
+const int N = 26;
+
+struct node {
+	bool term;
+	// vi child;
+	map<int, int> child;
+
+	node() {
+		term = 0;
+		// child.resize(N, -1);
+	}
+};
+
+map<int, int> a[5000000];  // 2991336
+bool t[5000000];
+int o = 1, jv = 0;
+
+void insert(string& s) {
+	int in = 0;
+	int n = s.size();
+	for (int i = 0; i < n; i++) {
+		if (a[in][s[i]] == 0)
+			in = a[in][s[i]] = o++;
+		else
+			in = a[in][s[i]];
+	}
+	if (t[in] == 0) jv++;
+	t[in] = 1;
+}
 
 signed main() {
 	TEZ;
 
 	int n;
 	cin >> n;
-
-	vii a(n);
+	string s;
 	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
+		cin >> s;
+		insert(s);
 	}
 
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+	cout << jv << endl;
 
 	return 0;
 }

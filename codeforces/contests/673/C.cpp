@@ -1,9 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
+// Problem: C. k-Amazing Numbers
+// Contest: Codeforces - Codeforces Round #673 (Div. 2)
+// URL: https://codeforces.com/contest/1417/problem/C
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,52 +54,48 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
-signed main() {
-	TEZ;
-
+void f() {
 	int n;
 	cin >> n;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
+	vi a(n + 1);
+	vi j(n + 1, -1);
+	vector<vi> b(n + 1, vi({0}));
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i];
+		b[a[i]].pb(i);
 	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
+	for (int i = 1; i <= n; i++) {
+		if (b[i].size() == 1) continue;
+		int mf = -INF;
+		b[i].pb(n + 1);
+		for (int j = 1; j < b[i].size(); j++) {
+			mf = max(mf, b[i][j] - b[i][j - 1]);
 		}
+		if (j[mf] == -1) j[mf] = i;
+	}
+	xtp(j);
+	int y = INF;
+	for (int i = 1; i <= n; i++) {
+		if (j[i] != -1) {
+			y = min(y, j[i]);
+		}
+		if (y != INF) j[i] = y;
 	}
 
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
+	for (int i = 1; i <= n; i++)
+		cout << j[i] << " ";
 	cout << endl;
+}
 
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+signed main() {
+	TEZ;
+
+	int t;
+	cin >> t;
+
+	while (t--)
+		f();
 
 	return 0;
 }

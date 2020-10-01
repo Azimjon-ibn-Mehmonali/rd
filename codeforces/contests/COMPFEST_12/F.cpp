@@ -1,10 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
+// Problem: F. Flamingoes of Mystery
+// Contest: Codeforces - 2020 ICPC, COMPFEST 12, Indonesia Multi-Provincial
+// Contest (Unrated, Online Mirror, ICPC Rules, Teams Preferred) URL:
+// https://codeforces.com/contest/1425/problem/F Memory Limit: 256 MB Time
+// Limit: 2000 ms Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
 
@@ -60,46 +59,32 @@ signed main() {
 	int n;
 	cin >> n;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
+	function<int(int, int)> sora = [&](int l, int r) {
+		int t;
+		cout << "? " << l << " " << r << endl;
+		cout.flush();
+		cin >> t;
+
+		return t;
+	};
+
+	vi a(n + 1, 0);
+	int yi = sora(1, n);
+	int t;
+	for (int i = n; i >= 3; i--) {
+		t = sora(1, i - 1);
+		a[i] = yi - t;
+		yi -= yi - t;
 	}
+	int y = sora(2, 3);
+	a[2] = y - a[3];
 
-	SORT(a);
-	int k = n;
+	a[1] = t - a[2];
 
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+	cout << "! ";
+	for (int i = 1; i <= n; i++)
+		cout << a[i] << " ";
+	cout.flush();
 
 	return 0;
 }

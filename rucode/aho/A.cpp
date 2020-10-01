@@ -1,11 +1,3 @@
-
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 // Muallif: Azimjon Mehmonali o'g'li
 
 //=========================================================
@@ -54,52 +46,58 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+const int N = 5000000;
+
+map<int, int> a[N];
+bool t[N];
+int o = 1;
+int jv = 0;
+
+void insert(string& s) {
+	int n = s.size();
+	for (int j = 0; j < n; j++) {
+		int in = 0;
+		for (int i = j; i < min(n, j + 30); i++) {
+			if (a[in][s[i]] == 0)
+				in = a[in][s[i]] = o++;
+			else
+				in = a[in][s[i]];
+			if (t[in] == 0) {
+				t[in] = 1;
+			}
+		}
+	}
+}
+
+bool find(string& s) {
+	int n = s.size();
+	int v = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[v].find(s[i]) == a[v].end()) return false;
+		v = a[v][s[i]];
+	}
+
+	return t[v];
+}
+
 signed main() {
 	TEZ;
 
-	int n;
-	cin >> n;
+	string s;
+	cin >> s;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
+	insert(s);
+
+	int m;
+	cin >> m;
+
+	for (int i = 0; i < m; i++) {
+		cin >> s;
+		if (find(s))
+			cout << "Yes" << endl;
+		else
+			cout << "No" << endl;
 	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
 
 	return 0;
 }

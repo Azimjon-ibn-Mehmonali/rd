@@ -1,9 +1,9 @@
 
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
+// Problem: C. Discrete Acceleration
+// Contest: Codeforces - Grakn Forces 2020
+// URL: https://codeforces.com/contest/1408/problem/C
 // Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// Time Limit: 3000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
 // Muallif: Azimjon Mehmonali o'g'li
@@ -54,52 +54,76 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+void f() {
+	int n, l;
+	cin >> n >> l;
+
+	vi a(n);
+	for (int &i : a)
+		cin >> i;
+	a.pb(INF);
+	a.insert(a.begin(), -INF);
+	n = a.size();
+
+	double c, o;
+	c = 0, o = l;
+	for (int i = 0; i < 200; i++) {
+		double m = (c + o) / 2;
+
+		double t1, t2;
+		t1 = t2 = 0;
+		double h = 0;
+		int v = 1;
+		for (int hi = 1; hi < n; hi++) {
+			double nk = min(1. * a[hi], m);
+			// xtp(nk);
+			// xtp(h);
+			// xtp(nk - h);
+			// xtp(v);
+			t1 += 1. * (nk - h) / v;
+			h = nk;
+			v++;
+			if (h >= m) break;
+		}
+
+		h = l;
+		v = 1;
+		for (int hi = n - 2; hi >= 0; hi--) {
+			double nk = max(1. * a[hi], m);
+			// xtp(nk);
+			// xtp(h);
+			// xtp(h - nk);
+			// xtp(v);
+			t2 += 1. * (h - nk) / v;
+			h = nk;
+			v++;
+			if (h <= m) break;
+		}
+		// xtp(m);
+		// xtp(t1);
+		// xtp(t2);
+
+		if (fabs(t1 - t2) < 1e-7) {
+			cout << setprecision(9) << t1 << endl;
+			return;
+		} else if (t1 > t2) {
+			o = m;
+		} else {
+			c = m;
+		}
+	}
+	xtp(o);
+	xtp(c);
+}
+
 signed main() {
 	TEZ;
 
-	int n;
-	cin >> n;
+	int t;
+	cin >> t;
 
-	vii a(n);
-	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
-	}
-
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
-		} else {
-			on.pb(a[i].S);
-		}
-	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
+	while (t--)
+		f();
 
 	return 0;
 }

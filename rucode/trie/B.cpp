@@ -1,11 +1,3 @@
-
-// Problem: C. Division into Teams
-// Contest: Codeforces - Codeforces Round #106 (Div. 2)
-// URL: https://codeforces.com/problemset/problem/149/C
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 // Muallif: Azimjon Mehmonali o'g'li
 
 //=========================================================
@@ -54,52 +46,61 @@ const long double PI = 3.1415926535897;
 const int mod = 1000000007LL;
 const int INF = 1e18;
 
+const int N = 5000000;
+
+map<int, int> a[N];
+bool t[N];
+int u[N];
+int o = 1;
+
+void insert(string& s) {
+	int in = 0;
+	int n = s.size();
+	for (int i = 0; i < n; i++) {
+		if (a[in][s[i]] == 0)
+			in = a[in][s[i]] = o++;
+		else
+			in = a[in][s[i]];
+		u[in]++;
+	}
+
+	t[in] = 1;
+}
+string j;
+void get(int in, int x) {
+	if (x == 0) return;
+	for (int i = 'a'; i <= 'z'; i++) {
+		int bl = a[in][i];
+		if (bl == 0) continue;
+		if (x <= u[bl]) {
+			j.pb(i);
+			if (t[bl]) x--;
+			get(bl, x);
+			return;
+		} else {
+			x -= u[bl];
+		}
+	}
+}
+
 signed main() {
 	TEZ;
 
 	int n;
 	cin >> n;
 
-	vii a(n);
+	string s;
 	for (int i = 0; i < n; i++) {
-		cin >> a[i].F;
-		a[i].S = i;
-	}
+		cin >> s;
 
-	SORT(a);
-	int k = n;
-
-	int i, j;
-	i = 0, j = n - 1;
-	vi ch, on;
-	int cy, oy;
-	cy = oy = 0;
-	for (int e = 0; e < k / 2; e++) {
-		cy += a[i].F;
-		ch.pb(a[i].S);
-		i++;
-
-		oy += a[i].F;
-		on.pb(a[i].S);
-		i++;
-	}
-
-	if (n & 1) {
-		if (cy < oy) {
-			ch.pb(a[i].S);
+		if (isdigit(s[0])) {
+			j = "";
+			get(0, stoi(s));
+			cout << j << endl;
 		} else {
-			on.pb(a[i].S);
+			insert(s);
 		}
 	}
-
-	cout << ch.size() << endl;
-	for (int r : ch)
-		cout << r + 1 << " ";
-	cout << endl;
-
-	cout << on.size() << endl;
-	for (int r : on)
-		cout << r + 1 << " ";
 
 	return 0;
 }
